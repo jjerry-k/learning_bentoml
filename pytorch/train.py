@@ -115,7 +115,7 @@ def main(config):
 
     net, ckpt, optm = utils.load_checkpoint(os.path.join(SAVEPATH, "best.pth.tar"), net)
 
-    tag = bentoml.pytorch.save(config["DATA"]["NAME"], net.to(torch.device("cpu")))
+    tag = bentoml.pytorch.save(config["DATA"]["NAME"], net)
     config["COMMON"]["TAG"] = str(tag.version)
     utils.write_yaml(os.path.join(SAVEPATH, "config.yaml"), config)
     logging.info(f"Training done !")

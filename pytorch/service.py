@@ -12,6 +12,9 @@ from bentoml import io
 
 import utils
 
+# After training, result directory is made in log directory
+# example) log/{DATASET_NAME}/{YYYY_MM_DD}/{hh_mm_ss}
+
 config_path = os.path.join('./log/flower_photos/2022_02_18/18_18_10', "config.yaml")
 config = utils.config_parser(config_path)
 
@@ -26,7 +29,7 @@ runner = bentoml.pytorch.load_runner(
                                     )
 
 svc = bentoml.Service(
-                    name=f'{config["DATA"]["NAME"]}_service',
+                    name=f'{config["DATA"]["NAME"]}_service', # Bento Name
                     runners=[
                         runner,
                     ],

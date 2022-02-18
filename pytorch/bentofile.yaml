@@ -1,0 +1,17 @@
+service: "service:svc"
+description: "file: ./README.md"
+labels:
+  owner: jjerry-k
+  stage: pytorch example
+include:
+- "service.py"
+- "model"
+- "utils"
+- "log/flower_photos/2022_02_18/18_18_10/config.yaml"
+
+python:
+  packages:
+    - torch
+    - timm
+    - Pillow
+    - PyYAML
