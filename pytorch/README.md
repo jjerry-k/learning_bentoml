@@ -14,7 +14,7 @@ conda create -y -n {ENV_NAME} python=3.8
 conda activate {ENV_NAME}
 
 # CPU mode
-pip install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+pip install torch==1.10.2 torchvision==0.11.3 torchaudio==0.10.2
 pip install -r requirements.txt
 
 # GPU mode
